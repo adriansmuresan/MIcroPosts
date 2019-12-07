@@ -16,5 +16,16 @@ function getPosts() {
 function submitPost() {
   const title = document.querySelector('#title').value;
   const body = document.querySelector('#body').value;
-  
+
+  const data = {
+    title,
+    body
+  }
+
+  //Create Post
+  http.post('http://localhost:3000/posts', data)
+    .then(data => {
+      getPosts();
+    })
+    .catch(err => console.log(err));
 }
