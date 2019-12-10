@@ -79,6 +79,11 @@ class UI {
     this.changeFormState('edit');
   }
 
+   // Clear ID hidden value
+   clearIdInput() {
+     this.idInput.value = '';
+   }
+
   // Change form state
   changeFormState(type) {
     if(type === 'edit') {
@@ -104,7 +109,10 @@ class UI {
       if(document.querySelector('.post-cancel')) {
         document.querySelector('.post-cancel').remove();
       }
-      
+      // Clear ID from hidden field
+      this.clearIdInput();
+      // Clear text
+      this.clearFields();
     }
   }
 }
