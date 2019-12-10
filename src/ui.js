@@ -84,6 +84,18 @@ class UI {
     if(type === 'edit') {
       this.postSubmit.textContent = 'Update Post';
       this.postSubmit.className = 'post-submit btn btn-warning btn-block';
+
+      // Create cancel button
+      const button = document.createElement('button');
+      button.className = 'post-cancel btn btn-light btn-block';
+      button.appendChild(document.createTextNode('Cancel Edit'));
+
+      // Get parent
+      const cardForm = document.querySelector('.card-form');
+      // get element to insert before
+      const formEnd = document.querySelector('.form-end');
+      // Insert cancel button
+      cardForm.insertBefore(button, formEnd);
     } else {
 
     }
