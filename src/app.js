@@ -19,23 +19,30 @@ function getPosts() {
   .catch(err => console.log(err));
 }
 
+// Submit Post
 function submitPost() {
   const title = document.querySelector('#title').value;
   const body = document.querySelector('#body').value;
 
-  const data = {
-    title,
-    body
+  if(title === '' || body === '') {
+    ui.showAlert('Please fill ina all fields', 'alert alert-danger');
+  } else {
+    const data = {
+      title,
+      body
+    }
+  
+    // Create Post
+    http.post('http://localhost:3000/posts', data)
+      .then(data => {
+        ui.showAlert('Post added', 'alert alert-success');
+        ui.clearFields();
+        getPosts();
+      })
+      .catch(err => console.log(err));
+
   }
 
-  // Create Post
-  http.post('http://localhost:3000/posts', data)
-    .then(data => {
-      ui.showAlert('Post added', 'alert alert-success');
-      ui.clearFields();
-      getPosts();
-    })
-    .catch(err => console.log(err));
 }
 
 // Delete Post
