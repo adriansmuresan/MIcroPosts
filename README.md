@@ -1,6 +1,6 @@
-# Babel Webpack Starter
+# Microposts App
 
-A starter pack to build JavaScript applications using standards from ES2015, ES2016 & ES2017. It uses webpack, Babel and webpack-dev-server to compile and serve. It is fully compatible with Async/Await as it uses the Babel polyfill.
+A Javascript CRUD POSTS App using ES6 Modules and Json Server for the REST API. Code is transpiled using Webpack and Babel
 
 ### Version
 1.1.0
@@ -22,6 +22,12 @@ To serve in the browser  - Runs webpack-dev-server
 $ npm start
 ```
 
+### JSON Server
+To run a fake JSON REST API server run the below commnad and visit http://localhost:3000/posts
+```sh
+npm install json-server --save
+```
+
 ### Build
 Compile and build
 
@@ -31,10 +37,15 @@ $ npm run build
 
 ## More Info
 
-### Author
+### Functionality
+- Add a post with title and body
+- Delete post with message confirmation
+- Update post with the ability to cancel and confirmation message
 
-Brad Traversy
-[Traversy Media](http://www.traversymedia.com)
+### Screenshots
+![Microposts1](assets/images/microposts1.png)
+
+![Microposts2](assets/images/microposts2.png)
 
 ### License
 
