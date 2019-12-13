@@ -9,5 +9,11 @@
 }
 
 body {
+  height: 100vh;
   background: linear-gradient(35deg , #8f9ba3, #8dbad6);
+}
+
+footer {
+  position: absolute;
+  left: 0 ; right: 0; bottom: 0;
 }
